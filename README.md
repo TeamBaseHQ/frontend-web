@@ -83,7 +83,7 @@ This directory contains a single file, `index.js`, for now. This file contains a
 
 #### /scss
 This directory contains all the style files, in SCSS format.
-> All the sub-directories, inside this directory, must have files prefixed or starting with an `_` (underscores). For example: `/scss/variables/_colors.scss`. All the sub-directories should have an `all.scss` file, which combines (imports) all the other files (that start with an `_` underscores). Further, this `all.scss` file should be imported inside the `/scss/app.scss` file. Any file, that are to be imported directly outside of the '/scss' folder, must be kept in the root of the `/scss` folder. For example, the `/scss/app.scss` file imports the `/scss/variables/all.scss` and the `/scss/app/all.scss` files, and then it is imported directly in the `/src/App.vue` file. Thus, the `/scss/app.scss` file acts as single source of all the styling, from outside of the `/scss` folder.  
+All the sub-directories, inside this directory, must have files prefixed or starting with an `_` (underscores). For example: `/scss/variables/_colors.scss`. All the sub-directories should have an `all.scss` file, which combines (imports) all the other files (that start with an `_` underscores). Further, this `all.scss` file should be imported inside the `/scss/app.scss` file. Any file, that are to be imported directly outside of the '/scss' folder, must be kept in the root of the `/scss` folder. For example, the `/scss/app.scss` file imports the `/scss/variables/all.scss` and the `/scss/app/all.scss` files, and then it is imported directly in the `/src/App.vue` file. Thus, the `/scss/app.scss` file acts as single source of all the styling, from outside of the `/scss` folder.  
 
 -------------
 
