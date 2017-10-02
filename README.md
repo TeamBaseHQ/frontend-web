@@ -35,8 +35,6 @@ This folder contains all the configuration files. The important files in this ar
 ### /src
 The `/src` directory is where all the source files are present. It further has sub-directories each with it's own purpose:
 
--------------
-
 #### main.js
 This is the app entry file. This is where our Vue application is instantiated. Any Vue plugins (`router`, `vuex`, etc) can be registered here.
 
@@ -45,6 +43,34 @@ The `App.vue` file is the main app component. All other pages will be rendered i
 
 #### /assets
 This is where all the static assets, like images, are stored.
+
+#### /store
+This is where the Vuex store and all the modules are kept. The following must should be followed:
+- All the globally shared **state** must be declared inside the `state.js` file.
+- All the global **getters** must be declared inside the `getters.js` file.
+- All the global **mutations** must be declared inside the `mutations.js` file.
+- All the global **actions** must be declared inside the `actions.js` file.
+- All the modules will go inside the `modules` sub-directory. Modules must be exported through the `index.js` file inside the `modules` directory. Each module (sub-directory) should follow the following conventions:
+  - The module **state** must be declared inside the `state.js` file. Example: `/store/modules/user/state.js`
+  - The module **getters** must be declared inside the `getters.js` file. Example: `/store/modules/user/getters.js`
+  - The module **mutations** must be declared inside the `mutations.js` file. Example: `/store/modules/user/mutations.js`
+  - The module **actions** must be declared inside the `actions.js` file. Example: `/store/modules/user/actions.js`
+  - All of the above files, must then be included and returned (`export default`) as an object from a `index.js` file. Example: `/store/modules/user/index.js`
+  
+**Here's a sample directory structure for the `/store` directory**
+-  **/store**
+    - state.js
+    - getters.js
+    - actions.js
+    - mutations.js
+    - **/modules**
+      - index.js (exports all the modules. eg: `user`)
+      - **/user**
+        - index.js (exports user module's `state`, `getters`, `actions` and `mutations`)
+        - state.js
+        - getters.js
+        - actions.js
+        - mutations.js
 
 #### /pages
 This directory contains all the components which act as pages or, to be specific, are used/rendered by the router. They can be further nested in sub-directories according to context. 

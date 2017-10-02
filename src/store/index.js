@@ -1,31 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import user from './modules/user';
+import state from './state';
+import actions from './actions';
+import getters from './getters';
+import modules from './modules';
+import mutations from './mutations';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  modules: {
-    user,
-  },
-  state: {
-    count: 0,
-  },
-  getters: {
-    counter(state) {
-      return state.count;
-    },
-  },
-  mutations: {
-    increment(state) {
-      state.count += 1;
-    },
-  },
-  actions: {
-    increaseCounter(context) {
-      setTimeout(() => {
-        context.commit('increment');
-      }, 1000);
-    },
-  },
+  modules,
+  state,
+  getters,
+  mutations,
+  actions,
 });
