@@ -5,4 +5,7 @@ export default {
   isLoading(state) {
     return state.loading;
   },
+  addingChannel(state) {
+    return state.creatingChannel;
+  },
 };

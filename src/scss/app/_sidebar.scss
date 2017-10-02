@@ -20,5 +20,16 @@
         }
       }
     }
+
+    .create-channel-form {
+      background: darken($sidebar-background, 10%);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: $radius;
+
+      .label {
+        color: $grey;
+      }
+    }
   }
 }

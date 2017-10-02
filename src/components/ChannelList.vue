@@ -3,7 +3,14 @@
     <aside class="menu">
       <p class="menu-label">
         Channels
+        <button class="button is-secondary is-pulled-right" @click="showForm = !showForm">
+          <span v-if="!showForm">Create</span>
+          <span v-if="showForm">Cancel</span>
+        </button>
       </p>
+
+      <create-channel-form v-if="showForm"></create-channel-form>
+
       <p v-if="isLoading">
         Loading channels...
       </p>
@@ -21,13 +28,21 @@
 
 <script>
   import {mapGetters, mapActions} from 'vuex';
+  import CreateChannelForm from '@/components/CreateChannelForm';
 
   export default {
     name: 'channel-list',
     created() {
       this.fetchChannels();
     },
-
+    data() {
+      return {
+        showForm: false,
+      };
+    },
+    components: {
+      CreateChannelForm,
+    },
     computed: {
       ...mapGetters([
         'allChannels',
