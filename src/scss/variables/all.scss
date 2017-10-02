@@ -1,8 +1,12 @@
 // Colors
 @import "./colors";
-
 // Typography
 @import "./typography";
-
 // Links
 @import "./links";
+// Misc
+@import "./misc";
+// App
+// This file should always be imported at the last.
+// Since it utilizes all the variables overridden or described above.
+@import "./app";

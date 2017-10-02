@@ -1,0 +1,20 @@
+.channel-list {
+  .menu-label {
+    color: inherit;
+  }
+
+  .channel-item {
+    .channel-link {
+      color: inherit;
+      padding: 0.8rem;
+
+      .channel-color {
+        width: 1.05rem;
+        height: 1.05rem;
+        padding: 0;
+        margin-right: 1rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}

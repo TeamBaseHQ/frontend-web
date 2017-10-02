@@ -1,0 +1,24 @@
+.sidebar {
+  background: $sidebar-background;
+  color: $sidebar-color;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: $sidebar-width;
+
+  .sidebar-panel {
+    padding: 1rem;
+  }
+
+  // Channel List
+  .channel-list {
+    .channel-item {
+      .channel-link {
+        &:hover {
+          background: lighten($sidebar-background, 10%);
+        }
+      }
+    }
+  }
+}
