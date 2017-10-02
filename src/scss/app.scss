@@ -2,8 +2,7 @@
 @import "~bulma/sass/utilities/_all";
 // Import App Variables
 @import "./variables/all";
-// Import Bulma and Buefy styles
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
+// Import Bulma
+@import "./bulma/all";
 // Import App Styling
 @import "./app/all";
