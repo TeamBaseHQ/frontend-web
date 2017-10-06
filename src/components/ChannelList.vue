@@ -1,13 +1,17 @@
 <template>
   <div class="channel-list">
     <aside class="menu">
-      <p class="menu-label">
-        Channels
-        <button class="button is-secondary is-pulled-right" @click="showForm = !showForm">
-          <span v-if="!showForm">Create</span>
-          <span v-if="showForm">Cancel</span>
-        </button>
-      </p>
+      <div class="menu-label columns">
+        <div class="column">
+          Channels
+        </div>
+        <div class="column">
+          <a class="show-channel-form-button is-pulled-right" @click="showForm = !showForm">
+            <span v-if="!showForm" class="mdi mdi-plus"></span>
+            <span v-if="showForm" class="mdi mdi-close"></span>
+          </a>
+        </div>
+      </div>
 
       <create-channel-form v-if="showForm"></create-channel-form>
 

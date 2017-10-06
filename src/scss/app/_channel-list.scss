@@ -1,6 +1,21 @@
 .channel-list {
   .menu-label {
     color: inherit;
+    align-items: center;
+    margin: 0 0 0.5rem;
+
+    .column {
+      padding: 0.2rem;
+    }
+
+    .show-channel-form-button {
+      font-size: 1rem;
+      color: $grey;
+
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   .channel-item {
