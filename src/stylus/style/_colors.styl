@@ -1,0 +1,186 @@
+// Brand Colors
+// primary
+$brand-primary = #5F6BEC;
+// secondary
+$brand-secondary = #2F314A;
+// info
+$brand-info = #63D5FF;
+// success
+$brand-success = #6CC27A;
+// warning
+$brand-warning = #FFAA57;
+// danger
+$brand-danger = #EA4040;
+// grey
+$brand-grey = #ABADCD;
+// light-grey
+$brand-light-grey = #EDEEF9;
+// dark
+$brand-dark = #5F6283;
+// highlight
+$brand-highlight = #ED5FC7;
+
+$deep-purple = {
+  "base":       $brand-primary,
+  "lighten-5":  lighten($deep-purple.base, 50%),
+  "lighten-4":  lighten($deep-purple.base, 40%),
+  "lighten-3":  lighten($deep-purple.base, 30%),
+  "lighten-2":  lighten($deep-purple.base, 20%),
+  "lighten-1":  lighten($deep-purple.base, 10%),
+  "darken-1":   darken($deep-purple.base, 10%),
+  "darken-2":   darken($deep-purple.base, 20%),
+  "darken-3":   darken($deep-purple.base, 30%),
+  "darken-4":   darken($deep-purple.base, 40%),
+  "accent-1":   blend($deep-purple.base),
+  "accent-2":   blend($deep-purple.base),
+  "accent-3":   blend($deep-purple.base),
+  "accent-4":   blend($deep-purple.base),
+}
+
+$red = {
+  "base":       $brand-danger,
+  "lighten-5":  lighten($red.base, 50%),
+  "lighten-4":  lighten($red.base, 40%),
+  "lighten-3":  lighten($red.base, 30%),
+  "lighten-2":  lighten($red.base, 20%),
+  "lighten-1":  lighten($red.base, 10%),
+  "darken-1":   darken($red.base, 10%),
+  "darken-2":   darken($red.base, 20%),
+  "darken-3":   darken($red.base, 30%),
+  "darken-4":   darken($red.base, 40%),
+  "accent-1":   blend($red.base),
+  "accent-2":   blend($red.base),
+  "accent-3":   blend($red.base),
+  "accent-4":   blend($red.base),
+}
+
+$pink = {
+  "base":       $brand-highlight,
+  "lighten-5":  lighten($pink.base, 50%),
+  "lighten-4":  lighten($pink.base, 40%),
+  "lighten-3":  lighten($pink.base, 30%),
+  "lighten-2":  lighten($pink.base, 20%),
+  "lighten-1":  lighten($pink.base, 10%),
+  "darken-1":   darken($pink.base, 10%),
+  "darken-2":   darken($pink.base, 20%),
+  "darken-3":   darken($pink.base, 30%),
+  "darken-4":   darken($pink.base, 40%),
+  "accent-1":   blend($pink.base),
+  "accent-2":   blend($pink.base),
+  "accent-3":   blend($pink.base),
+  "accent-4":   blend($pink.base),
+}
+
+$blue = {
+  "base":       $brand-info,
+  "lighten-5":  lighten($blue.base, 50%),
+  "lighten-4":  lighten($blue.base, 40%),
+  "lighten-3":  lighten($blue.base, 30%),
+  "lighten-2":  lighten($blue.base, 20%),
+  "lighten-1":  lighten($blue.base, 10%),
+  "darken-1":   darken($blue.base, 10%),
+  "darken-2":   darken($blue.base, 20%),
+  "darken-3":   darken($blue.base, 30%),
+  "darken-4":   darken($blue.base, 40%),
+  "accent-1":   blend($blue.base),
+  "accent-2":   blend($blue.base),
+  "accent-3":   blend($blue.base),
+  "accent-4":   blend($blue.base),
+}
+
+$green = {
+  "base":       $brand-success,
+  "lighten-5":  lighten($green.base, 50%),
+  "lighten-4":  lighten($green.base, 40%),
+  "lighten-3":  lighten($green.base, 30%),
+  "lighten-2":  lighten($green.base, 20%),
+  "lighten-1":  lighten($green.base, 10%),
+  "darken-1":   darken($green.base, 10%),
+  "darken-2":   darken($green.base, 20%),
+  "darken-3":   darken($green.base, 30%),
+  "darken-4":   darken($green.base, 40%),
+  "accent-1":   blend($green.base),
+  "accent-2":   blend($green.base),
+  "accent-3":   blend($green.base),
+  "accent-4":   blend($green.base),
+}
+
+$amber = {
+  "base":       $brand-warning,
+  "lighten-5":  lighten($amber.base, 50%),
+  "lighten-4":  lighten($amber.base, 40%),
+  "lighten-3":  lighten($amber.base, 30%),
+  "lighten-2":  lighten($amber.base, 20%),
+  "lighten-1":  lighten($amber.base, 10%),
+  "darken-1":   darken($amber.base, 10%),
+  "darken-2":   darken($amber.base, 20%),
+  "darken-3":   darken($amber.base, 30%),
+  "darken-4":   darken($amber.base, 40%),
+  "accent-1":   blend($amber.base),
+  "accent-2":   blend($amber.base),
+  "accent-3":   blend($amber.base),
+  "accent-4":   blend($amber.base),
+}
+
+$blue-grey = {
+  "base":       lighten(saturate($brand-primary, 20%), 20%),
+  "lighten-5":  lighten($blue-grey.base, 50%),
+  "lighten-4":  lighten($blue-grey.base, 40%),
+  "lighten-3":  lighten($blue-grey.base, 30%),
+  "lighten-2":  lighten($blue-grey.base, 20%),
+  "lighten-1":  lighten($blue-grey.base, 10%),
+  "darken-1":   darken($blue-grey.base, 10%),
+  "darken-2":   darken($blue-grey.base, 20%),
+  "darken-3":   darken($blue-grey.base, 30%),
+  "darken-4":   darken($blue-grey.base, 40%),
+  "accent-1":   blend($blue-grey.base),
+  "accent-2":   blend($blue-grey.base),
+  "accent-3":   blend($blue-grey.base),
+  "accent-4":   blend($blue-grey.base),
+}
+
+$grey = {
+  "base":       $brand-grey,
+  "lighten-5":  lighten($grey.base, 50%),
+  "lighten-4":  lighten($grey.base, 40%),
+  "lighten-3":  lighten($grey.base, 30%),
+  "lighten-2":  lighten($grey.base, 20%),
+  "lighten-1":  lighten($grey.base, 10%),
+  "darken-1":   darken($grey.base, 10%),
+  "darken-2":   darken($grey.base, 20%),
+  "darken-3":   darken($grey.base, 30%),
+  "darken-4":   darken($grey.base, 40%),
+  "accent-1":   blend($grey.base),
+  "accent-2":   blend($grey.base),
+  "accent-3":   blend($grey.base),
+  "accent-4":   blend($grey.base),
+}
+
+$shades = {
+  "black":        $brand-secondary,
+  "white":        #FFFFFF,
+  "transparent":  transparent
+}
+
+$colors = {
+  "red": $red,
+  "pink": $pink,
+  "purple": $purple,
+  "deep-purple": $deep-purple,
+  "indigo": $indigo,
+  "blue": $blue,
+  "light-blue": $light-blue,
+  "cyan": $cyan,
+  "teal": $teal,
+  "green": $green,
+  "light-green": $light-green,
+  "lime": $lime,
+  "yellow": $yellow,
+  "amber": $amber,
+  "orange": $orange,
+  "deep-orange": $deep-orange,
+  "brown": $brown,
+  "blue-grey": $blue-grey,
+  "grey": $grey,
+  "shades": $shades
+}

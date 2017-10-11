@@ -12,6 +12,6 @@
   };
 </script>
 
-<style lang="scss">
-  @import "./scss/app";
+<style lang="stylus">
+  @require "./stylus/main.styl";
 </style>
