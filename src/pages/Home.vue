@@ -1,19 +1,18 @@
 <template>
-  <div class="home-page">
-    <section class="hero is-secondary is-fullheight">
-      <div id="local-media-ctr"></div>
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title is-spaced">
-            <img src="../assets/logos/logo-type-white.svg">
-          </h1>
-          <h2 class="subtitle">
-            Team Communication. Unified.
-          </h2>
-        </div>
-      </div>
-    </section>
-  </div>
+  <v-app id="home-page" class="home-page">
+    <main>
+      <v-content>
+        <v-container fluid fill-height>
+          <v-layout justify-center align-center>
+            <div class="text-xs-center">
+              <img src="../assets/logos/logo-type-dark-grey.svg" width="150px">
+              <h5 class="pt-3 text-xs-center grey--text">Team Communication Platform.</h5>
+            </div>
+          </v-layout>
+        </v-container>
+      </v-content>
+    </main>
+  </v-app>
 </template>
 
 <script>
@@ -21,6 +20,3 @@
     name: 'home',
   };
 </script>
-
-<style>
-</style>
