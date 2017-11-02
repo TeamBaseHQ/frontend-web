@@ -2,9 +2,12 @@
   <v-app id="app-base" class="app-page app-base" :dark="darkMode">
     <SideBar></SideBar>
     <NavBar></NavBar>
-    <div class="app-main">
-      <router-view></router-view>
-    </div>
+    
+    <main class="app-main">
+      <v-content>
+        <router-view></router-view>
+      </v-content>
+    </main>
   </v-app>
 </template>
 
