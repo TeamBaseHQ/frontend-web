@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '../pages/Home';
 import AppBase from '../pages/app/AppBase';
-import ChannelThreads from '../pages/app/ChannelThreads';
+import AppMain from '../pages/app/AppMain';
 
 Vue.use(Router);
 
@@ -20,7 +20,7 @@ export default new Router({
       children: [{
         path: '/',
         name: 'app',
-        component: ChannelThreads,
+        component: AppMain,
       }],
     },
   ],
