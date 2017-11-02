@@ -1,8 +1,7 @@
 <template>
   <v-app id="app-base" class="app-page app-base" :dark="darkMode">
-    <NavBar></NavBar>
     <SideBar></SideBar>
-
+    <NavBar></NavBar>
     <div class="app-main">
       <router-view></router-view>
     </div>
@@ -10,8 +9,8 @@
 </template>
 
 <script>
-  import NavBar from '../../components/NavBar';
   import SideBar from '../../components/SideBar';
+  import NavBar from '../../components/NavBar/NavBar';
 
   export default {
     name: 'AppBase',
