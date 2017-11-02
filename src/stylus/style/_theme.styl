@@ -23,10 +23,10 @@ $material-light = {
   background: lighten($brand-light-grey, 80%),
   cards: #FFFFFF,
   chips: {
-    background: $grey.lighten-5,
+    background: lighten($grey.lighten-5, 20%),
     color: $material-light.text.secondary
   },
-  dividers: rgba(0, 0, 0, 0.12),
+  dividers: rgba(0, 0, 0, 0.1),
   text: {
     theme: #fff,
     primary: $brand-dark,
@@ -92,10 +92,14 @@ $material-light = {
   primary-text-percent: .87
   secondary-text-percent: .54
   disabledORhints-text-percent: .38
-  divider-percent: .02
+  divider-percent: .1
   active-icon-percent: .54
   inactive-icon-percent: .38
 }
+
+/**
+  * Dark Theme
+ */
 
 $material-dark = {
   status-bar: {
