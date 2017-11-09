@@ -1,0 +1,67 @@
+<svg width="581" height="416" viewBox="0 0 581 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>rays</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-92 199)">
+<g id="rays">
+<g id="Group 4.1">
+<g id="Rectangle 2">
+<use xlink:href="#path0_fill" transform="matrix(0.866025 0.5 -0.5 0.866025 220.943 -198.63)" fill="url(#paint0_linear)"/>
+</g>
+<g id="Rectangle 2.1">
+<use xlink:href="#path1_fill" transform="matrix(0.866025 0.5 -0.5 0.866025 231.971 -169.322)" fill="#D7D9F8"/>
+</g>
+<g id="Rectangle 2.2">
+<use xlink:href="#path2_fill" transform="matrix(0.866025 0.5 -0.5 0.866025 156.01 -190.238)" fill="url(#paint2_linear)"/>
+</g>
+<g id="Rectangle 2.3">
+<use xlink:href="#path3_fill" transform="matrix(0.866025 0.5 -0.5 0.866025 289.916 -89.9863)" fill="#D7D9F8"/>
+</g>
+<g id="Rectangle 2.4">
+<use xlink:href="#path4_fill" transform="matrix(0.866025 0.5 -0.5 0.866025 181.208 -129.808)" fill="url(#paint4_linear)"/>
+</g>
+<g id="Rectangle 2.5">
+<use xlink:href="#path1_fill" transform="matrix(0.866025 0.5 0.5 -0.866025 152.502 -31.6788)" fill="url(#paint5_linear)"/>
+</g>
+<g id="Rectangle 2.6">
+<use xlink:href="#path2_fill" transform="matrix(0.866025 0.5 0.5 -0.866025 96.4085 -87.0051)" fill="#D7D9F8"/>
+</g>
+<g id="Rectangle 2.7">
+<use xlink:href="#path5_fill" transform="matrix(0.866025 0.5 0.5 -0.866025 262.141 -14.2602)" fill="url(#paint7_linear)"/>
+</g>
+<g id="Rectangle 2.8">
+<use xlink:href="#path6_fill" transform="matrix(0.866025 0.5 0.5 -0.866025 92.7519 -134.997)" fill="#D7D9F8"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(516.594 2.67763 -70.2346 19020.1 37.1981 -9504.14)">
+<stop offset="0" stop-color="#E2E3FC"/>
+<stop offset="1" stop-color="#F8F9FF"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(568.837 -0.0683178 1.97093 21944.8 0.250526 -10963.6)">
+<stop offset="0" stop-color="#E2E3FC"/>
+<stop offset="1" stop-color="#F8F9FF"/>
+</linearGradient>
+<linearGradient id="paint4_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(516.351 2.42636 -63.6439 18111.4 32.2871 -9048.93)">
+<stop offset="0" stop-color="#E2E3FC"/>
+<stop offset="0.888705" stop-color="#F6F6FF"/>
+<stop offset="1" stop-color="#F8F9FF"/>
+</linearGradient>
+<linearGradient id="paint5_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(493.712 0.211417 -5.28789 16513 2.94326 -8244.54)">
+<stop offset="0" stop-color="#E2E3FC"/>
+<stop offset="1" stop-color="#F8F9FF"/>
+</linearGradient>
+<linearGradient id="paint7_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(389.182 -0.53875 10.6642 10301.4 -1.83487 -5139.7)">
+<stop offset="0" stop-color="#E2E3FC"/>
+<stop offset="1" stop-color="#F8F9FF"/>
+</linearGradient>
+<path id="path0_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 521.118 0L 521.118 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path1_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 496.914 0L 496.914 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path2_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 573.156 0L 573.156 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path3_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 407.064 0L 407.064 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path4_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 521.118 0L 521.118 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path5_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 393.255 0L 393.255 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+<path id="path6_fill" d="M 0 9.93356C 0 4.44741 4.44741 0 9.93356 0L 600.318 0L 600.318 19.8671L 9.93356 19.8671C 4.44741 19.8671 0 15.4197 0 9.93356L 0 9.93356Z"/>
+</defs>
+</svg>
