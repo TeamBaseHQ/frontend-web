@@ -30,40 +30,7 @@
       </v-list-tile>
     </v-list>
 
-    <v-list subheader dense>
-      <v-subheader>
-        <v-list-tile-content>
-          <v-list-tile-title>Channels</v-list-tile-title>
-        </v-list-tile-content>
-        <v-list-tile-action>
-          <v-btn icon dark small>
-            <v-icon>add</v-icon>
-          </v-btn>
-        </v-list-tile-action>
-      </v-subheader>
-      <v-list-tile @click="">
-        <v-list-tile-action>
-          <v-icon color="green">stop</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>design</v-list-tile-title>
-        </v-list-tile-content>
-        <v-list-tile-action>
-          <span class="jewel">14</span>
-        </v-list-tile-action>
-      </v-list-tile>
-      <v-list-tile @click="">
-        <v-list-tile-action>
-          <v-icon color="pink">stop</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>development</v-list-tile-title>
-        </v-list-tile-content>
-        <v-list-tile-action>
-          <span class="jewel">5</span>
-        </v-list-tile-action>
-      </v-list-tile>
-    </v-list>
+    <channel-list></channel-list>
   </v-navigation-drawer>
 </template>
 

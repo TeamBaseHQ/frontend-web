@@ -1,38 +1,32 @@
 <template>
-  <div class="channel-list">
-    <aside class="menu">
-      <div class="menu-label columns">
-        <div class="column">
-          Channels
-        </div>
-        <div class="column">
-          <a class="show-channel-form-button is-pulled-right" @click="showForm = !showForm">
-            <span v-if="!showForm" class="mdi mdi-plus"></span>
-            <span v-if="showForm" class="mdi mdi-close"></span>
-          </a>
-        </div>
-      </div>
-
-      <create-channel-form v-if="showForm"></create-channel-form>
-
-      <p v-if="isLoading">
-        Loading channels...
-      </p>
-      <ul class="menu-list" v-if="!isLoading">
-        <li class="channel-item" v-for="channel in allChannels" :key="channel.name">
-          <a class="channel-link">
-            <span class="channel-color tag" :style="'background:' + channel.color"></span>
-            <span class="channel-label">{{channel.name}}</span>
-          </a>
-        </li>
-      </ul>
-    </aside>
-  </div>
+  <v-list subheader dense>
+    <v-subheader>
+      <v-list-tile-content>
+        <v-list-tile-title>Channels</v-list-tile-title>
+      </v-list-tile-content>
+      <v-list-tile-action>
+        <v-btn icon dark small @click="addChannel">
+          <v-icon>add</v-icon>
+        </v-btn>
+      </v-list-tile-action>
+    </v-subheader>
+    <v-list-tile @click="" v-for="channel in channels" :key="channel.name">
+      <v-list-tile-action>
+        <v-icon color="green">stop</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+        <v-list-tile-title>{{channel.name}}</v-list-tile-title>
+      </v-list-tile-content>
+      <v-list-tile-action>
+        <span class="jewel">0</span>
+      </v-list-tile-action>
+    </v-list-tile>
+  </v-list>
 </template>
 
 <script>
   import {mapGetters, mapActions} from 'vuex';
-  import CreateChannelForm from '@/components/CreateChannelForm';
+
 
   export default {
     name: 'channel-list',
@@ -41,23 +35,25 @@
     },
     data() {
       return {
-        showForm: false,
+        formVisible: false,
+        name: '',
       };
     },
-    components: {
-      CreateChannelForm,
-    },
     computed: {
-      ...mapGetters([
-        'allChannels',
-        'isLoading',
-      ]),
+      ...mapGetters({
+        channels: 'allChannels',
+      }),
     },
-
     methods: {
       ...mapActions([
         'fetchChannels',
       ]),
+      addChannel() {
+        this.$set(this.channels, 'dev', {
+          name: 'New Dev',
+          color: 'red',
+        });
+      },
     },
   };
 </script>

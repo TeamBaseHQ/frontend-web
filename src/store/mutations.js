@@ -1,5 +1,5 @@
 export default {
-  increment(state) {
-    state.count += 1;
+  increment(state, o) {
+    state.count += o.a;
   },
 };
