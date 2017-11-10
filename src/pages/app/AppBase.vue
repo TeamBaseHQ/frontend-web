@@ -23,13 +23,11 @@
     },
     data() {
       return {
-        //
+        darkMode: true,
       };
     },
     computed: {
-      darkMode() {
-        return true;
-      },
+      //
     },
   };
 </script>
