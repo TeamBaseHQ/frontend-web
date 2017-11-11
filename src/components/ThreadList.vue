@@ -10,7 +10,7 @@
         </v-btn>
       </v-list-tile-action>
     </v-subheader>
-    <v-list-tile @click="" v-for="thread in threads" :key="thread.name">
+    <v-list-tile @click="false" v-for="thread in threads" :key="thread.name">
       <v-list-tile-action>
         <v-icon color="green">stop</v-icon>
       </v-list-tile-action>
@@ -26,35 +26,38 @@
 
 <script>
   import {mapGetters, mapActions} from 'vuex';
+
   export default {
     name: 'thread-list',
     created() {
-      this.fetchThreads(channelslug);
+      this.fetchThreads(this.channelSlug);
     },
     data() {
       return {
         formVisible: false,
         name: '',
-        channelslug: this.$route.params.channelname,
       };
     },
     computed: {
       ...mapGetters({
         threads: 'allThreads',
       }),
-      channelSlug(){
-            return this.$route.params.channelname
-        },
+      channelSlug() {
+        return 'channel1';
+      },
     },
     methods: {
       ...mapActions([
         'fetchThreads',
-        //this.$store.dispatch('fetchThreads', channelSlug),
+        'createThread',
       ]),
       addThread() {
-        this.$set(this.threads, 'createlogo', {
-          name: 'createlogo',
-          color: 'blue',
+        this.createThread({
+          slug: 'logo-thread',
+          thread: {
+            name: 'Logo Design',
+            color: 'purple',
+          },
         });
       },
     },
