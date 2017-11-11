@@ -9,6 +9,8 @@
     clipped
     class="sidebar"
     id="sidebar"
+    :floating="isDarkMode"
+
   >
     <v-list dense class="my-2">
       <v-list-tile @click="">
