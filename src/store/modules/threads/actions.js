@@ -1,11 +1,11 @@
 import threads from '@/services/thread';
 
 export default {
-  fetchThreads(context) {
+  fetchThreads(context, data) {
     context.commit('fetchingThreads');
     // Simulate/Fake server request-response delay
     setTimeout(() => {
-      context.commit('populateThreads', threads.all());
+      context.commit('populateThreads', threads[data.slug]);
       context.commit('threadsFetched');
     }, 2000);
   },
