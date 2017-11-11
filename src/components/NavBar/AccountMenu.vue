@@ -31,7 +31,7 @@
           </v-list-tile-action>
           <v-list-tile-title>Dark Mode</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'account-settings' }">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
           </v-list-tile-action>
