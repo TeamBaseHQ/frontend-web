@@ -3,7 +3,7 @@
     <v-toolbar flat class="transparent">
       <v-toolbar-title>Account Settings</v-toolbar-title>
     </v-toolbar>
-    <v-tabs class="account-settings-tabs">
+    <v-tabs class="account-settings-tabs" v-model="currentTab">
       <v-tabs-bar class="account-settings-bar" :class="{ 'is-dark': isDarkMode }">
         <v-tabs-item ripple :to="{ name: 'account-settings' }" href="account-settings-personal-info">
           Personal Info
@@ -21,9 +21,12 @@
 <script>
   export default {
     name: 'account-settings',
+    created() {
+      this.currentTab = this.$route.name;
+    },
     data() {
       return {
-        //
+        currentTab: 'account-settings-personal-info',
       };
     },
   };
