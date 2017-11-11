@@ -2,5 +2,16 @@ html,
 body
   min-height: 100%;
 
-#app, .app-page
-  @extends .full-height
+.no-background {
+  background: none !important;
+}
+
+.account-settings-tabs
+  .account-settings-bar
+    background: $brand-light-grey;
+    &.is-dark
+      background: lighten($brand-secondary, 20%);
+
+.list--four-line
+  .list__tile
+    height: 100%;
