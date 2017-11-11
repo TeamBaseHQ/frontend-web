@@ -1,6 +1,7 @@
 <template>
   <div class="app-main full-height">
-    <v-container fluid fill-height>
+    <thread-list></thread-list>
+    <!-- <v-container fluid fill-height>
       <v-layout justify-center align-center>
         <div class="empty-state">
           <img src="../../assets/illustrations/empty-threads.svg" alt="No thread selected." class="empty-state--image">
@@ -8,12 +9,17 @@
           <h6 class="empty-state--message">Select a Channel to list it's Threads</h6>
         </div>
       </v-layout>
-    </v-container>
+    </v-container> -->
   </div>
 </template>
 
 <script>
+  import ThreadList from '@/components/ThreadList';
+
   export default {
     name: 'app-main',
+    components: {
+      ThreadList,
+    },
   };
 </script>
