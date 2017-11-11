@@ -37,18 +37,23 @@
       return {
         formVisible: false,
         name: '',
+        channelslug: this.$route.params.channelname,
       };
     },
     computed: {
       ...mapGetters({
         threads: 'allThreads',
       }),
+      channelSlug(){
+            return this.$route.params.channelname
+        },
     },
     methods: {
       ...mapActions([
-        'fetchThreads',
+        //'fetchThreads',
+        this.$store.dispatch('fetchThreads', channelSlug),
       ]),
-      addChannel() {
+      addThread() {
         this.$set(this.threads, 'createlogo', {
           name: 'createlogo',
           color: 'blue',
