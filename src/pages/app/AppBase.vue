@@ -21,10 +21,5 @@
       NavBar,
       SideBar,
     },
-    computed: {
-      isDarkMode() {
-        return this.$store.getters.isDarkMode;
-      },
-    },
   };
 </script>
