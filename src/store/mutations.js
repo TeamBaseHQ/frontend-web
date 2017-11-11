@@ -1,5 +1,5 @@
 export default {
-  increment(state, o) {
-    state.count += o.a;
+  setDarkMode(state, val) {
+    state.darkMode = val;
   },
 };

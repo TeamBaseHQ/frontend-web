@@ -1,3 +1,3 @@
 export default {
-  count: 0,
+  darkMode: true,
 };

@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app-base" class="app-page app-base" :dark="darkMode">
+  <v-app id="app-base" class="app-page app-base" :dark="isDarkMode">
     <SideBar></SideBar>
     <NavBar></NavBar>
 
@@ -21,13 +21,10 @@
       NavBar,
       SideBar,
     },
-    data() {
-      return {
-        darkMode: true,
-      };
-    },
     computed: {
-      //
+      isDarkMode() {
+        return this.$store.getters.isDarkMode;
+      },
     },
   };
 </script>

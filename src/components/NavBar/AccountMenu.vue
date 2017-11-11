@@ -27,7 +27,7 @@
       <v-list>
         <v-list-tile>
           <v-list-tile-action>
-            <v-switch color="primary"></v-switch>
+            <v-switch color="primary" v-model="darkMode"></v-switch>
           </v-list-tile-action>
           <v-list-tile-title>Dark Mode</v-list-tile-title>
         </v-list-tile>
@@ -55,6 +55,17 @@
       return {
         accountMenu: false,
       };
+    },
+    computed: {
+      darkMode: {
+        get() {
+          return this.$store.getters.isDarkMode;
+        },
+
+        set(value) {
+          this.$store.dispatch('toggleDarkMode', value);
+        },
+      },
     },
   };
 </script>
