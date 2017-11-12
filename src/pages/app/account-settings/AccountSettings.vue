@@ -11,6 +11,9 @@
         <v-tabs-item ripple :to="{ name: 'account-settings-notifications' }" href="account-settings-notifications">
           Notifications
         </v-tabs-item>
+        <v-tabs-item ripple :to="{ name: 'account-settings-team-settings' }" href="account-settings-notifications">
+          Team Settings
+        </v-tabs-item>
         <v-tabs-slider color="primary"></v-tabs-slider>
       </v-tabs-bar>
       <router-view></router-view>
