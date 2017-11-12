@@ -1,7 +1,4 @@
 export default {
-  /**
-   * Returns all the Channels
-   */
   all() {
     return {
       'design-abcd-1234': {
@@ -19,3 +16,4 @@ export default {
     };
   },
 };
+
