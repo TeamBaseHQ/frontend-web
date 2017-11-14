@@ -2,6 +2,7 @@
   <v-app id="app-base" class="app-page app-base" :dark="isDarkMode">
     <SideBar></SideBar>
     <NavBar></NavBar>
+    <message></message>
 
     <main class="app-main">
       <v-content>
@@ -17,12 +18,14 @@
   import AuthService from '../../services/AuthService';
   import BaseService from '../../services/BaseService';
   import UserService from '../../services/UserService';
+  import message from '../../components/Message';
 
   export default {
     name: 'AppBase',
     components: {
       NavBar,
       SideBar,
+      message,
     },
     created() {
       AuthService.getUserAccessToken('kunalvarma05@gmail.com', 'abcd1234').then((accessToken) => {
