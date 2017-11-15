@@ -43,14 +43,14 @@
         apps: false,
       };
     },
+    watch: {
+      $route() {
+        this.fetchAppList();
+      },
+    },
     computed: {
       allAppsByCategory() {
         return this.apps ? this.apps.allByCategory(this.categorySlug) : {};
-      },
-      watch: {
-        $route: {
-          fetchAppList() {},
-        },
       },
       categorySlug() {
         return this.$route.params.category;

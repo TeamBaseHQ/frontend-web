@@ -2,23 +2,20 @@
   <div>
   <v-list subheader dense>
     <v-subheader>Hand Picked</v-subheader>
-    <v-list-tile @click="" v-for="category in handPickedCategories" :key="category.name">
+    <v-list-tile :to="{ name: 'app-list', params: { category: categorySlug} }" v-for="(category, categorySlug) in handPickedCategories" :key="categorySlug">
       <v-list-tile-action>
         <v-icon>{{category.icon}}</v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
         <v-list-tile-title>
-          <!-- <v-list-tile-title>{{category.name}}</v-list-tile-title> -->
-          <router-link :to="{ name: 'app-list', params: { cname: category.name} }" style="">
-            <div>{{category.name}}</div>
-          </router-link>
+            {{category.name}}
         </v-list-tile-title>
       </v-list-tile-content>
     </v-list-tile>
   </v-list>
   <v-list subheader dense>
     <v-subheader>Categories</v-subheader>
-    <v-list-tile @click="" v-for="category in allCategories" :key="category.name">
+    <v-list-tile :to="{ name: 'app-list', params: { category: categorySlug} }" v-for="(category, categorySlug) in allCategories" :key="category.name">
       <v-list-tile-action>
         <v-icon>{{category.icon}}</v-icon>
       </v-list-tile-action>

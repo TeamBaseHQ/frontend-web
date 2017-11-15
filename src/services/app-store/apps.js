@@ -26,7 +26,7 @@ export default {
           image: 'https://logo.clearbit.com/github.com?s=128',
         },
       },
-      productivity_tools: {
+      productivity: {
         slack: {
           name: 'Slack',
           image: 'https://logo.clearbit.com/slack.com?s=128',
