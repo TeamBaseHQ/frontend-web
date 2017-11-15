@@ -40,7 +40,7 @@
             <v-list-tile-title>Teams</v-list-tile-title>
           </v-list-tile-content>
           <v-list-tile-action>
-            <v-btn :loading="addingTeam" icon dark small @click="addTeam">
+            <v-btn :loading="addingTeam" icon small @click="addTeam">
               <v-icon>add</v-icon>
             </v-btn>
           </v-list-tile-action>
