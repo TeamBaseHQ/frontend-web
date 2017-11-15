@@ -47,11 +47,15 @@
     methods: {
       ...mapActions([
         'fetchChannels',
+        'createChannel',
       ]),
       addChannel() {
-        this.$set(this.channels, 'dev', {
-          name: 'New Dev',
-          color: 'red',
+        this.createChannel({
+          slug: 'dev',
+          channel: {
+            name: 'Sales',
+            color: 'amber',
+          },
         });
       },
     },
