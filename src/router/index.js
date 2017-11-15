@@ -7,6 +7,8 @@ import AccountSettings from '../pages/app/account-settings/AccountSettings';
 import PersonalInfoAccountSettings from '../pages/app/account-settings/tabs/PersonalInfo';
 import NotificationsAccountSettings from '../pages/app/account-settings/tabs/Notifications';
 import TeamSettingsAccountSettings from '../pages/app/account-settings/tabs/TeamSettings';
+import AppStore from '../pages/app-store/AppStore';
+import AppList from '../pages/app-store/AppList';
 
 Vue.use(Router);
 
@@ -17,6 +19,18 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/app-store',
+      name: 'app-store',
+      component: AppStore,
+      children: [
+        {
+          path: ':category',
+          component: AppList,
+          name: 'app-list',
+        }],
+
     },
     {
       path: '/app',
