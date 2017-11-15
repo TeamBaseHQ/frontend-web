@@ -12,8 +12,6 @@
 
   >
     <app-category-list></app-category-list>
-    <!-- <h4>vhv</h4>
-    <v-subheader>Hellloo</v-subheader> -->
   </v-navigation-drawer>
 </template>
 

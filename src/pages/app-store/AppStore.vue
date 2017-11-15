@@ -32,6 +32,12 @@
         </v-btn>
         <v-btn>Sign in</v-btn>
     </v-toolbar>
+
+    <main class="app-main app-store-main">
+      <v-content>
+        <router-view></router-view>
+      </v-content>
+    </main>
   </v-app>
 
 </template>

@@ -7,7 +7,12 @@
         <v-icon>{{category.icon}}</v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
-        <v-list-tile-title>{{category.name}}</v-list-tile-title>
+        <v-list-tile-title>
+          <!-- <v-list-tile-title>{{category.name}}</v-list-tile-title> -->
+          <router-link :to="{ name: 'app-list', params: { cname: category.name} }" style="">
+            <div>{{category.name}}</div>
+          </router-link>
+        </v-list-tile-title>
       </v-list-tile-content>
     </v-list-tile>
   </v-list>
