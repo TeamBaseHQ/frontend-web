@@ -2,10 +2,19 @@ export default {
   fetchingAppCategories(state) {
     state.loading = true;
   },
-  populateAppCategories(state, appcategories) {
-    state.appcategories = appcategories;
+  populateAppCategories(state, appCategories) {
+    state.appCategories = appCategories;
   },
-  appcategoriesFetched(state) {
+  appCategoriesFetched(state) {
+    state.loading = false;
+  },
+  fetchingHandPickedCategories(state) {
+    state.loading = true;
+  },
+  populateHandPickedCategories(state, handPickedCategories) {
+    state.handPickedCategories = handPickedCategories;
+  },
+  handPickedCategoriesFetched(state) {
     state.loading = false;
   },
 };

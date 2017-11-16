@@ -1,5 +1,6 @@
 export default {
-  appcategories: {},
+  appCategories: {},
+  handPickedCategories: {},
   loading: false,
-  creatingAppCategory: false,
+  loadingHandPicked: false,
 };

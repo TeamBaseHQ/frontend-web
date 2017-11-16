@@ -1,12 +1,12 @@
-import applists from '@/services/applist';
+import appList from '@/services/app-store/apps';
 
 export default {
-  fetchAppLists(context, channel) {
+  fetchAppLists(context, category) {
     context.commit('fetchingAppLists');
     // Simulate/Fake server request-response delay
     setTimeout(() => {
-      context.commit('populateAppLists', applists[channel]);
-      context.commit('applistsFetched');
+      context.commit('populateAppList', appList.allByCategory(category));
+      context.commit('appListFetched');
     }, 2000);
   },
 };

@@ -1,8 +1,8 @@
 export default {
-  allAppLists(state) {
-    return state.applists;
+  appList(state) {
+    return state.appList;
   },
-  applistsAreLoading(state) {
+  appListIsLoading(state) {
     return state.loading;
   },
   addingAppList(state) {

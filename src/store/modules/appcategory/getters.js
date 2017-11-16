@@ -1,11 +1,14 @@
 export default {
   allAppCategories(state) {
-    return state.appcategories;
+    return state.appCategories;
   },
-  appcategoriesAreLoading(state) {
+  appCategoriesAreLoading(state) {
     return state.loading;
   },
-  addingAppCategories(state) {
-    return state.creatingAppcategory;
+  allHandPickedCategories(state) {
+    return state.handPickedCategories;
+  },
+  handPickedCategoriesAreLoading(state) {
+    return state.loadingHandPicked;
   },
 };

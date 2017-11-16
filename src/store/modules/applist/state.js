@@ -1,5 +1,5 @@
 export default {
-  applists: {},
+  appList: {},
   loading: false,
   creatingAppLists: false,
 };

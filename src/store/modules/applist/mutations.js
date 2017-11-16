@@ -2,10 +2,10 @@ export default {
   fetchingAppLists(state) {
     state.loading = true;
   },
-  populateAppLists(state, applists) {
-    state.applists = applists;
+  populateAppList(state, appList) {
+    state.appList = appList;
   },
-  applistsFetched(state) {
+  appListFetched(state) {
     state.loading = false;
   },
 };
