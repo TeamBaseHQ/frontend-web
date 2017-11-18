@@ -31,12 +31,13 @@
 </template>
 
 <script>
-  import apps from '../../services/app-store/apps';
+ // import apps from '../../services/app-store/apps';
+  import {mapGetters, mapActions} from 'vuex';
 
   export default {
     name: 'app-list',
     created() {
-      this.fetchAppList();
+      this.fetchAppLists(this.categorySlug);
     },
     data() {
       return {
@@ -45,23 +46,24 @@
     },
     watch: {
       $route() {
-        this.fetchAppList();
+        this.fetchAppLists(this.categorySlug);
       },
     },
     computed: {
-      allAppsByCategory() {
-        return this.apps ? this.apps.allByCategory(this.categorySlug) : {};
-      },
+      // allAppsByCategory() {
+      //   return this.apps ? this.apps.allByCategory(this.categorySlug) : {};
+      // },
       categorySlug() {
         return this.$route.params.category;
       },
+      ...mapGetters({
+        allAppsByCategory: 'appList',
+      }),
     },
     methods: {
-      fetchAppList() {
-        setTimeout(() => {
-          this.apps = apps;
-        }, 2000);
-      },
+      ...mapActions([
+        'fetchAppLists',
+      ]),
     },
   };
 </script>

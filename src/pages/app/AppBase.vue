@@ -2,7 +2,6 @@
   <v-app id="app-base" class="app-page app-base" :dark="isDarkMode">
     <SideBar></SideBar>
     <NavBar></NavBar>
-
     <main class="app-main">
       <v-content>
         <router-view></router-view>

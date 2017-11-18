@@ -28,33 +28,30 @@
 </template>
 
 <script>
-  import categories from '../../services/app-store/categories';
-
+  import {mapGetters, mapActions} from 'vuex';
 
   export default {
     name: 'app-category-list',
     created() {
       this.fetchAppCategories();
+      this.fetchHandPickedCategories();
     },
     data() {
       return {
-        categories: false,
+        //
       };
     },
     computed: {
-      handPickedCategories() {
-        return this.categories ? this.categories.handPicked() : {};
-      },
-      allCategories() {
-        return this.categories ? this.categories.all() : {};
-      },
+      ...mapGetters({
+        allCategories: 'allAppCategories',
+        handPickedCategories: 'allHandPickedCategories',
+      }),
     },
     methods: {
-      fetchAppCategories() {
-        setTimeout(() => {
-          this.categories = categories;
-        }, 2000);
-      },
+      ...mapActions([
+        'fetchAppCategories',
+        'fetchHandPickedCategories',
+      ]),
     },
   };
 </script>

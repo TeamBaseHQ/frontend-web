@@ -40,9 +40,7 @@
                       <v-text-field value="http://baseapp.io/xyz" readonly label="Invitation Link" >Invitation Link</v-text-field>
                     </v-flex>
                     <v-flex lg6 md6>
-                      <v-btn color="">
-                        Send Invite
-                      </v-btn>
+                    <invitations></invitations>
                     </v-flex>
                   </v-layout>
               </v-container>
@@ -55,11 +53,17 @@
  </template>
 
 <script>
+  import Invitations from '../../../../components/Teams/Invitations';
+
   export default {
     name: 'account-settings-team-settings',
+    components: {
+      Invitations,
+    },
     data() {
       return {
         privateTeam: false,
+        sendInvite: false,
       };
     },
   };
