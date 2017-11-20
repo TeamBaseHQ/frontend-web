@@ -17,4 +17,9 @@ export default class AuthService extends BaseService {
         return user;
       });
   }
+
+  static logout() {
+    Auth.clearAccessToken();
+    Auth.clearCurrentUser();
+  }
 }
