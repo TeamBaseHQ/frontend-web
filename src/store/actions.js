@@ -1,5 +1,5 @@
-import BaseService from '../services/BaseService';
 import Auth from '../lib/Auth';
+import AuthService from '../services/AuthService';
 
 export default {
   toggleDarkMode(context) {
@@ -11,13 +11,11 @@ export default {
 
     if (!currentUser) {
       context.commit('fetchingCurrentUser');
-      return BaseService.base()
-        .userService()
-        .getCurrentUser()
-        .then((user) => {
-          context.commit('setCurrentUser', user);
-          context.commit('currentUserFetched');
-        });
+
+      return AuthService.getCurrentUser().then((user) => {
+        context.commit('setCurrentUser', user);
+        context.commit('currentUserFetched');
+      });
     }
 
     return context.commit('setCurrentUser', currentUser);
