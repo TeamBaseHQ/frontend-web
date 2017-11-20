@@ -1,6 +1,9 @@
 import {Auth as Authentication, Models} from 'base-javascript-sdk';
 
 export default {
+  isAuthenticated() {
+    return this.getAccessToken();
+  },
   setAccessToken(accessToken) {
     window.localStorage.setItem('_token', JSON.stringify(accessToken));
   },
@@ -14,6 +17,9 @@ export default {
       token.access_token, token.expires_in, token.refresh_token,
     );
   },
+  clearAccessToken() {
+    window.localStorage.removeItem('_token');
+  },
   setCurrentUser(user) {
     window.localStorage.setItem('_currentUser', JSON.stringify(user));
   },
@@ -26,7 +32,7 @@ export default {
 
     return new Models.User(data);
   },
-  isAuthenticated() {
-    return this.getAccessToken();
+  clearCurrentUser() {
+    window.localStorage.removeItem('_currentUser');
   },
 };
