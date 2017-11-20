@@ -7,7 +7,7 @@
       <v-list two-lines >
         <!-- <br> -->
         <!-- <v-divider v-bind:inset="app.inset"></v-divider> -->
-        <v-list-tile @click="" v-for="app in allAppsByCategory" :key="app.name" style="height:60px;">
+        <v-list-tile :to="{ name: 'app-store-details', params: { app: appSlug} }" v-for="(app, appSlug) in allAppsByCategory" :key="app.name">
           <v-list-tile-action>
             <v-list-tile-avatar>
                 <img :src="app.image" alt="logo">
