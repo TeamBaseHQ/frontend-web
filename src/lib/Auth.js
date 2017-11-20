@@ -12,6 +12,6 @@ export default {
     return JSON.parse(window.localStorage.getItem('_currentUser'));
   },
   isAuthenticated() {
-    return this.getAccessToken() && this.getCurrentUser();
+    return this.getAccessToken();
   },
 };
