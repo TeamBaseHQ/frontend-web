@@ -3,8 +3,8 @@ import {mapGetters, mapActions} from 'vuex';
 export default {
   computed: {
     ...mapGetters({
-      getCurrentUser: 'getCurrentUser',
-      getAccessToken: 'getAccessToken',
+      $currentUser: 'getCurrentUser',
+      $accessToken: 'getAccessToken',
     }),
   },
   methods: {
