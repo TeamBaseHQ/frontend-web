@@ -21,7 +21,7 @@
       SideBar,
     },
     created() {
-      //
+      this.fetchCurrentUser();
     },
   };
 </script>
