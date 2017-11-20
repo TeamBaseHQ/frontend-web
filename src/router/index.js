@@ -9,6 +9,7 @@ import NotificationsAccountSettings from '../pages/app/account-settings/tabs/Not
 import TeamSettingsAccountSettings from '../pages/app/account-settings/tabs/TeamSettings';
 import AppStore from '../pages/app-store/AppStore';
 import AppList from '../pages/app-store/AppList';
+import AppDetails from '../pages/app-store/AppDetails';
 
 Vue.use(Router);
 
@@ -29,6 +30,11 @@ export default new Router({
           path: ':category',
           component: AppList,
           name: 'app-list',
+        },
+        {
+          path: '/apps/:appSlug',
+          component: AppDetails,
+          name: 'app-store-details',
         }],
 
     },
