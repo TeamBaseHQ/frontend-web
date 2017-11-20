@@ -1,4 +1,4 @@
-import {mapGetters} from 'vuex';
+import {mapGetters, mapActions} from 'vuex';
 
 export default {
   computed: {
@@ -6,5 +6,10 @@ export default {
       getCurrentUser: 'getCurrentUser',
       getAccessToken: 'getAccessToken',
     }),
+  },
+  methods: {
+    ...mapActions([
+      'fetchCurrentUser',
+    ]),
   },
 };
