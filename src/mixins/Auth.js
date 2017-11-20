@@ -1,18 +1,10 @@
-import AuthService from '../lib/Auth';
+import {mapGetters} from 'vuex';
 
 export default {
-  methods: {
-    $_setAccessToken(accessToken) {
-      AuthService.setAccessToken(accessToken);
-    },
-    $_getAccessToken() {
-      return AuthService.getAccessToken();
-    },
-    $_setCurrentUser(user) {
-      AuthService.setCurrentUser(user);
-    },
-    $_getCurrentUser() {
-      return AuthService.getCurrentUser();
-    },
+  computed: {
+    ...mapGetters({
+      getCurrentUser: 'getCurrentUser',
+      getAccessToken: 'getAccessToken',
+    }),
   },
 };
