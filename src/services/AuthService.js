@@ -8,4 +8,13 @@ export default class AuthService extends BaseService {
       return accessToken;
     });
   }
+
+  static getCurrentUser() {
+    return super.base()
+      .userService()
+      .getCurrentUser().then((user) => {
+        Auth.setCurrentUser(user);
+        return user;
+      });
+  }
 }
