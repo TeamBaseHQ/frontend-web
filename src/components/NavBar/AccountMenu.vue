@@ -9,16 +9,16 @@
     class="account-menu px-3"
   >
     <v-avatar class="white" slot="activator" size="32px">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="John">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" :alt="$currentUser.name">
     </v-avatar>
     <v-card>
       <v-list>
         <v-list-tile avatar @click="">
           <v-list-tile-avatar>
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="John">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" :alt="$currentUser.name">
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>John</v-list-tile-title>
+            <v-list-tile-title>{{$currentUser.name}}</v-list-tile-title>
             <v-list-tile-sub-title>Active</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
