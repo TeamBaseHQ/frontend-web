@@ -8,4 +8,7 @@ export default {
   addingAppList(state) {
     return state.creatingAppList;
   },
+  currentApp(state) {
+    return state.currentApp;
+  },
 };
