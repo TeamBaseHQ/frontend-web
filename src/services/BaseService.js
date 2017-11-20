@@ -1,13 +1,25 @@
 import {Base, BaseApp} from 'base-javascript-sdk';
 import ENV from '../env';
+import Auth from '../lib/Auth';
 
 export default class BaseService {
+
   static base() {
-    if (BaseService.baseInstance instanceof Base) {
-      return BaseService.baseInstance;
+    // No Instance, yet.
+    if (!(BaseService.baseInstance instanceof Base)) {
+      const app = new BaseApp(ENV.client_id, ENV.client_secret, ENV.api_url);
+      BaseService.baseInstance = new Base(app);
     }
 
-    BaseService.baseInstance = new Base(new BaseApp(ENV.client_id, ENV.client_secret, ENV.api_url));
+    // Fetch the Access Token
+    const accessToken = Auth.getAccessToken();
+
+    // If we have the access token
+    if (accessToken) {
+      // We'll utilize the token
+      BaseService.baseInstance.getApp().setAccessToken(accessToken);
+    }
+
     return BaseService.baseInstance;
   }
 
