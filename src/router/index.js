@@ -1,74 +1,45 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '../pages/Home';
-import AppBase from '../pages/app/AppBase';
-import AppMain from '../pages/app/AppMain';
-import AccountSettings from '../pages/app/account-settings/AccountSettings';
-import PersonalInfoAccountSettings from '../pages/app/account-settings/tabs/PersonalInfo';
-import NotificationsAccountSettings from '../pages/app/account-settings/tabs/Notifications';
-import TeamSettingsAccountSettings from '../pages/app/account-settings/tabs/TeamSettings';
-import AppStore from '../pages/app-store/AppStore';
-import AppList from '../pages/app-store/AppList';
-import AppDetails from '../pages/app-store/AppDetails';
+import routeList from './routes';
+import Mappings from './middlewares/mappings';
 
 Vue.use(Router);
 
-export default new Router({
+// Create a Router instance.
+// -------------------------
+// All the routes are
+// to be registered in
+// the routes.js file.
+const router = new Router({
   mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/app-store',
-      name: 'app-store',
-      component: AppStore,
-      children: [
-        {
-          path: ':category',
-          component: AppList,
-          name: 'app-list',
-        },
-        {
-          path: '/apps/:appSlug',
-          component: AppDetails,
-          name: 'app-store-details',
-        }],
-
-    },
-    {
-      path: '/app',
-      component: AppBase,
-      children: [
-        {
-          path: '/',
-          name: 'app',
-          component: AppMain,
-        },
-        {
-          path: 'account-settings',
-          component: AccountSettings,
-          children: [
-            {
-              path: '/',
-              name: 'account-settings',
-              component: PersonalInfoAccountSettings,
-            },
-            {
-              path: 'notifications',
-              name: 'account-settings-notifications',
-              component: NotificationsAccountSettings,
-            },
-            {
-              path: 'teamsettings',
-              name: 'account-settings-team-settings',
-              component: TeamSettingsAccountSettings,
-            },
-          ],
-        },
-      ],
-    },
-  ],
+  routes: routeList,
+  linkExactActiveClass: 'has-active-child',
 });
+
+// Middleware dispatcher
+router.beforeEach((to, from, next) => {
+  to.matched.forEach((route) => {
+    if (route.meta &&
+      route.meta.middlewares !== undefined &&
+      route.meta.middlewares.length
+    ) {
+      // Loop over all the middlewares of the route
+      route.meta.middlewares.forEach((alias) => {
+        // If a middleware was found
+        const middleware = Mappings[alias];
+
+        if (middleware) {
+          // Call the middleware
+          return middleware.call(this, to, from, next);
+        }
+
+        return middleware;
+      });
+    }
+  });
+
+  // Continue
+  next();
+});
+
+export default router;
