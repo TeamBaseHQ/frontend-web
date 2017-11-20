@@ -9,4 +9,11 @@ export default {
       context.commit('appListFetched');
     }, 2000);
   },
+  fetchAppDetails(context, appSlug) {
+    context.commit('fetchingAppDetails');
+    setTimeout(() => {
+      context.commit('setCurrentApp', appList.detailsApps(appSlug));
+      context.commit('appDetailsFetched');
+    }, 2000);
+  },
 };
