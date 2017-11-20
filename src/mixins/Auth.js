@@ -1,16 +1,18 @@
+import AuthService from '../lib/Auth';
+
 export default {
   methods: {
     $_setAccessToken(accessToken) {
-      this.$localStorage.set('_token', JSON.stringify(accessToken));
+      AuthService.setAccessToken(accessToken);
     },
     $_getAccessToken() {
-      return JSON.parse(this.$localStorage.get('_token'));
+      return AuthService.getAccessToken();
     },
     $_setCurrentUser(user) {
-      this.$localStorage.set('_currentUser', JSON.stringify(user));
+      AuthService.setCurrentUser(user);
     },
     $_getCurrentUser() {
-      return JSON.parse(this.$localStorage.get('_currentUser'));
+      return AuthService.getCurrentUser();
     },
   },
 };
