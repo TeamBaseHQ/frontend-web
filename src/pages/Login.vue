@@ -64,8 +64,9 @@
         this.loading = true;
         this.$validator.validateAll()
           .then(() => AuthService.getUserAccessToken(this.email, this.password)
-            .then(() => {
+            .then((accessToken) => {
               this.loading = false;
+              this.$store.commit('setAccessToken', accessToken);
               this.$router.push({name: 'app'});
             }));
       },
