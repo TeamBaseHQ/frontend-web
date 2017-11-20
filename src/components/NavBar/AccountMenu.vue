@@ -37,7 +37,7 @@
           </v-list-tile-action>
           <v-list-tile-title>Settings</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile @click="logout">
           <v-list-tile-action>
             <v-icon>exit_to_app</v-icon>
           </v-list-tile-action>
@@ -49,6 +49,8 @@
 </template>
 
 <script>
+  import AuthService from '../../services/AuthService';
+
   export default {
     name: 'navbar-account-menu',
     data() {
@@ -65,6 +67,12 @@
         set(value) {
           this.$store.dispatch('toggleDarkMode', value);
         },
+      },
+    },
+    methods: {
+      logout() {
+        AuthService.logout();
+        window.location.reload();
       },
     },
   };
