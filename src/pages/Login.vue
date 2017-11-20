@@ -63,14 +63,11 @@
       logIn() {
         this.loading = true;
         this.$validator.validateAll()
-          .then(this.fetchAccessToken);
-      },
-      fetchAccessToken() {
-        return AuthService.getUserAccessToken(this.email, this.password)
-          .then(() => {
-            this.loading = false;
-            this.router.push({name: 'app'});
-          });
+          .then(() => AuthService.getUserAccessToken(this.email, this.password)
+            .then(() => {
+              this.loading = false;
+              this.$router.push({name: 'app'});
+            }));
       },
     },
   };
