@@ -50,7 +50,7 @@
             <img :src="team.logo" />
           </v-list-tile-avatar>
           <v-list-tile-content>
-             <v-list-tile-title>{{team.name}}</v-list-tile-title>
+             <v-list-tile-title>{{team.getName}}</v-list-tile-title>
             <v-list-tile-sub-title>{{team.unreadmsgs}} Messages</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -68,7 +68,7 @@
     </v-card>
   </v-menu>
 </template>
-
+//
 <script>
   import {mapGetters, mapActions} from 'vuex';
 
