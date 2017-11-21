@@ -22,6 +22,7 @@
                       :error-messages="errors.collect('email')"
                       v-validate="'required|email'"
                       data-vv-name="email"
+                      type="email"
                       required
                     ></v-text-field>
                     <v-text-field
