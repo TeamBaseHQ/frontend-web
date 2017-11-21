@@ -1,14 +1,13 @@
-import teams from '@/services/team';
 import BaseService from '../../../services/BaseService';
 
 export default {
   fetchTeams(context) {
     context.commit('fetchingTeams');
     // Simulate/Fake server request-response delay
-    setTimeout(() => {
-      context.commit('populateTeams', teams.all());
-      context.commit('teamsFetched');
-    }, 2000);
+    BaseService.base.getAllTeams().then((teamCollection) => {
+      context.commit('populateTeams', teamCollection.getData());
+    });
+    context.commit('teamsFetched');
   },
   fetchCurrentTeam(context, teamSlug) {
     context.commit('fetchingCurrentTeam');
