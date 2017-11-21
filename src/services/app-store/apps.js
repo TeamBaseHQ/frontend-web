@@ -53,6 +53,20 @@ export default {
           image: 'https://logo.clearbit.com/github.com?s=128',
         },
       },
+      social_media: {
+        facebook: {
+          name: 'Facebook',
+          image: 'https://logo.clearbit.com/facebook.com?s=128',
+        },
+        twitter: {
+          name: 'Twitter',
+          image: 'https://logo.clearbit.com/twitter.com?s=128',
+        },
+        whatsapp: {
+          name: 'Whatsapp',
+          image: 'https://logo.clearbit.com/whatsapp.com?s=128',
+        },
+      },
       productivity: {
         slack: {
           name: 'Slack',
@@ -63,6 +77,10 @@ export default {
         giphy: {
           name: 'Giphy',
           image: 'https://logo.clearbit.com/giphy.com?s=128',
+        },
+        tictactoe: {
+          name: 'Tic Tac Toe',
+          image: 'https://logo.clearbit.com/tictactoe.cat?s=128',
         },
       },
     };
