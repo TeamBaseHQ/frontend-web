@@ -19,4 +19,13 @@ export default {
   teamCreated(state) {
     state.creatingTeam = false;
   },
+  setCurrentTeam(state, team) {
+    state.currentTeam = team;
+  },
+  fetchingCurrentTeam(state) {
+    state.loadingCurrentTeam = true;
+  },
+  currentTeamFetched(state) {
+    state.loadingCurrentTeam = false;
+  },
 };
