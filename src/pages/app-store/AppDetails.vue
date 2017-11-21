@@ -3,8 +3,11 @@
      <v-layout>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-card-media :src="appDetails.image" height="200px">
-        </v-card-media>
+        <v-flex xs6 sm6 md3 offset-xs3 offset-lg4>
+        <v-list-tile-avatar size="150px" style="width:100%">
+            <img :src="appDetails.image" alt="logo" style="width:150px" >
+        </v-list-tile-avatar>
+        </v-flex>
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">{{appDetails.name}}</h3>
