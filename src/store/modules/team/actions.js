@@ -1,7 +1,7 @@
 import BaseService from '../../../services/BaseService';
 
 export default {
-  fetchTeams(context) {
+  fetchAllTeams(context) {
     context.commit('fetchingTeams');
     // Simulate/Fake server request-response delay
     BaseService.base().teamService().getAllTeams().then((teamCollection) => {
