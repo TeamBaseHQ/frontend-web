@@ -1,25 +1,24 @@
 <template>
-  <div>
-    <br>
-    <h4>{{this.categories.name}}</h4>
-    <blockquote>{{this.categories.Description}}</blockquote>
+  <v-container class="pa-5">
     <v-layout row>
-      <v-flex xs12 sm10 offset-sm1>
+      <v-flex lg12 md12 sm12 xs12>
+        <h4>{{this.categories.name}}</h4>
+        <p class="opacity-7">{{this.categories.Description}}</p>
+      </v-flex>
+    </v-layout>
+    <v-layout row class="mt-3">
+      <v-flex>
         <v-card>
           <v-list two-lines>
-             <!-- <br> -->
-            <!-- <v-divider v-bind:inset="app.inset"></v-divider> -->
             <v-list-tile :to="{ name: 'app-store-details', params: { appSlug: slug } }"
                          v-for="(app, slug) in allAppsByCategory" :key="app.name">
               <v-list-tile-action>
-                <v-list-tile-avatar>
+                <v-list-tile-avatar size="36px">
                   <img :src="app.image" alt="logo">
                 </v-list-tile-avatar>
               </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>{{app.name}}</v-list-tile-title>
-                <br>
-                <v-divider></v-divider>
               </v-list-tile-content>
               <!-- <v-divider></v-divider> -->
               <v-icon>keyboard_arrow_right</v-icon>
@@ -29,7 +28,7 @@
         </v-card>
       </v-flex>
     </v-layout>
-  </div>
+  </v-container>
 </template>
 
 <script>
