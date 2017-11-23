@@ -4,7 +4,7 @@ export default {
   fetchTeams(context) {
     context.commit('fetchingTeams');
     // Simulate/Fake server request-response delay
-    BaseService.base.getAllTeams().then((teamCollection) => {
+    BaseService.base().teamService().getAllTeams().then((teamCollection) => {
       context.commit('populateTeams', teamCollection.getData());
     });
     context.commit('teamsFetched');

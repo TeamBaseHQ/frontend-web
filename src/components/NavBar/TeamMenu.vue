@@ -47,11 +47,11 @@
         </v-subheader>
         <v-list-tile avatar @click="" v-for="team in teams" :key="team.name">
           <v-list-tile-avatar>
-            <img :src="team.logo" />
+            <img src="http://placehold.it/40x40" />
           </v-list-tile-avatar>
           <v-list-tile-content>
-             <v-list-tile-title>{{team.getName}}</v-list-tile-title>
-            <v-list-tile-sub-title>{{team.unreadmsgs}} Messages</v-list-tile-sub-title>
+             <v-list-tile-title>{{team.getName()}}</v-list-tile-title>
+            <v-list-tile-sub-title>2 Messages</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
 
