@@ -2,9 +2,13 @@ html,
 body
   min-height: 100%;
 
-.no-background {
+.no-background
   background: none !important;
-}
+
+for num in (1..10)
+  .opacity-{num}
+    $o = floor(num/10, 2)
+    opacity: $o
 
 .account-settings-tabs
   .account-settings-bar
