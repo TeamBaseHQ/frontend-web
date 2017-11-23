@@ -45,25 +45,15 @@
             </v-btn>
           </v-list-tile-action>
         </v-subheader>
-        <v-list-tile avatar @click="" v-for="team in teams" :key="team.name">
+        <v-list-tile avatar @click="goToTeam(team.getSlug())" v-for="team in teams" :key="team.name">
           <v-list-tile-avatar>
             <img src="http://placehold.it/40x40"/>
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{team.getName()}}</v-list-tile-title>
-            <v-list-tile-sub-title>2 Messages</v-list-tile-sub-title>
+            <!--<v-list-tile-sub-title>2 Messages</v-list-tile-sub-title>-->
           </v-list-tile-content>
         </v-list-tile>
-
-        <!-- <v-list-tile avatar @click="">
-           <v-list-tile-avatar>
-             <img src=/>
-           </v-list-tile-avatar>
-           <v-list-tile-content>
-             <v-list-tile-title>Facebook</v-list-tile-title>
-             <v-list-tile-sub-title>10+ messages</v-list-tile-sub-title>
-           </v-list-tile-content>
-         </v-list-tile>-->
       </v-list>
     </v-card>
   </v-menu>
@@ -84,6 +74,7 @@
     },
     computed: {
       ...mapGetters({
+        teamsAreLoading: 'teamsAreLoading',
         teams: 'allTeams',
         addingTeam: 'addingTeam',
       }),
@@ -92,6 +83,9 @@
       ...mapActions([
         'createTeam',
       ]),
+      goToTeam(slug) {
+        this.$router.push({name: 'team-dashboard', params: {teamSlug: slug}});
+      },
       addTeam() {
         this.createTeam({
           slug: 'google',
