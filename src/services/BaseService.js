@@ -1,5 +1,6 @@
-import {Base, BaseApp} from 'base-javascript-sdk';
+import {BaseApp} from 'base-javascript-sdk';
 import ENV from '../env';
+import Base from '../lib/Base';
 import Auth from '../lib/Auth';
 
 export default class BaseService {
