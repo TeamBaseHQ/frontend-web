@@ -12,6 +12,7 @@
     >
         <img src="../../assets/logos/logo-type-dark-grey.svg" height="20px">
         <v-spacer></v-spacer>
+
         <v-text-field
           placeholder="Search..."
           single-line
