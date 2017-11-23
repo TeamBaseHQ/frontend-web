@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex';
   import NavBar from '../../components/NavBar/NavBar';
 
   export default {
@@ -19,6 +20,12 @@
     },
     created() {
       this.fetchCurrentUser();
+      this.fetchAllTeams();
+    },
+    methods: {
+      ...mapActions([
+        'fetchAllTeams',
+      ]),
     },
   };
 </script>
