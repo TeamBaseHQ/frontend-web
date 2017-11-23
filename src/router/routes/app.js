@@ -23,7 +23,7 @@ export default [
         children: [
           {
             path: '/',
-            name: 'team-base',
+            name: 'team-dashboard',
             component: TeamMain,
           },
         ],
