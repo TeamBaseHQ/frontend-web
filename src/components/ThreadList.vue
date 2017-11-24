@@ -40,8 +40,14 @@
         </v-card-actions>
       </form>
     </v-slide-y-transition>
-    <v-list v-if="!formVisible" class="thread-list">
-      <v-list-tile @click="false" v-for="thread in threads" :key="thread.getSlug()" class="thread-list-item">
+    <div class="align-center justify-center text-xs-center">
+      <v-progress-circular v-if="threadsAreLoading" indeterminate v-bind:size="60" v-bind:width="6"
+                           color="grey"></v-progress-circular>
+    </div>
+    <v-list v-if="!formVisible && !threadsAreLoading" class="thread-list">
+      <p class="pt-4 text-xs-center" v-if="!threads.length">No Threads</p>
+      <v-list-tile :to="{name: 'thread-messages', params: { threadSlug: thread.getSlug() }}" v-for="thread in threads"
+                   :key="thread.getSlug()" class="thread-list-item">
         <v-list-tile-content>
           <v-list-tile-title>
             {{thread.getSubject()}}
@@ -68,6 +74,9 @@
           }, 100);
         }
       },
+      channelSlug() {
+        this.fetchThreads({team: this.currentTeam.getSlug(), channel: this.channelSlug});
+      },
     },
     data() {
       return {
@@ -79,6 +88,7 @@
     computed: {
       ...mapGetters({
         currentTeam: 'currentTeam',
+        threadsAreLoading: 'threadsAreLoading',
         threads: 'allThreads',
         addingThread: 'creatingThread',
       }),

@@ -5,6 +5,7 @@ import TeamMain from '../../pages/app/team/TeamMain';
 import TeamChannel from '../../pages/app/team/TeamChannel';
 import ChannelThreads from '../../pages/app/team/ChannelThreads';
 import accountSettingsRoutes from './account-settings';
+import ThreadMessages from '../../pages/app/team/ThreadMessages';
 
 export default [
   {
@@ -36,6 +37,13 @@ export default [
                 path: '/',
                 name: 'channel-threads',
                 component: ChannelThreads,
+                children: [
+                  {
+                    path: ':threadSlug',
+                    name: 'thread-messages',
+                    component: ThreadMessages,
+                  },
+                ],
               },
             ],
           },

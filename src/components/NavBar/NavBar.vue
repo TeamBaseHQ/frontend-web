@@ -3,6 +3,7 @@
     app
     dense
     fixed
+    enable-resize-watcher
     clipped-left
     id="navbar"
     class="navbar"

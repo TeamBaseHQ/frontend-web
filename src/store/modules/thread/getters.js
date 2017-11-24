@@ -8,4 +8,7 @@ export default {
   creatingThread(state) {
     return state.creatingThread;
   },
+  currentThread(state, getters) {
+    return threadSlug => getters.allThreads.filter(thread => thread.slug === threadSlug)[0];
+  },
 };
