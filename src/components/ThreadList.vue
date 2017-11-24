@@ -1,6 +1,6 @@
 <template>
   <v-list subheader dense>
-    <v-subheader>
+    <v-subheader class="opacity-7">
       <v-list-tile-content>
         <v-list-tile-title>Threads</v-list-tile-title>
       </v-list-tile-content>
@@ -15,6 +15,7 @@
         <v-card-text>
           <v-text-field
             v-model="subject"
+            id="subject-box"
             label="Subject"
             :error-messages="errors.collect('subject')"
             v-validate="'required'"
@@ -34,17 +35,16 @@
           ></v-text-field>
         </v-card-text>
         <v-card-actions class="mt-3">
-          <v-btn type="submit" color="primary" block :loading="loading">Create</v-btn>
+          <v-btn type="submit" color="primary" block :loading="addingThread">Create</v-btn>
         </v-card-actions>
       </form>
     </v-slide-y-transition>
-    <v-list v-if="!formVisible">
-      <v-list-tile @click="false" v-for="thread in threads" :key="thread.getSlug()">
-        <v-list-tile-action>
-          <v-icon color="green">stop</v-icon>
-        </v-list-tile-action>
+    <v-list v-if="!formVisible" class="thread-list">
+      <v-list-tile @click="false" v-for="thread in threads" :key="thread.getSlug()" class="thread-list-item">
         <v-list-tile-content>
-          <v-list-tile-title>{{thread.getSubject()}}</v-list-tile-title>
+          <v-list-tile-title>
+            {{thread.getSubject()}}
+          </v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -59,18 +59,27 @@
     created() {
       this.fetchThreads({team: this.currentTeam.getSlug(), channel: this.channelSlug});
     },
+    watch: {
+      formVisible() {
+        if (this.formVisible) {
+          setTimeout(() => {
+            document.getElementById('subject-box').focus();
+          }, 100);
+        }
+      },
+    },
     data() {
       return {
         formVisible: false,
         subject: '',
         description: '',
-        loading: false,
       };
     },
     computed: {
       ...mapGetters({
         currentTeam: 'currentTeam',
         threads: 'allThreads',
+        addingThread: 'addingThread',
       }),
       channelSlug() {
         return this.$route.params.channelSlug;
@@ -87,6 +96,18 @@
         'fetchThreads',
         'createThread',
       ]),
+      addThread() {
+        this.createThread({
+          subject: this.subject,
+          description: this.description,
+          team: this.currentTeam.getSlug(),
+          channel: this.currentChannel.getSlug(),
+        }).then(() => {
+          this.subject = '';
+          this.description = '';
+          this.formVisible = false;
+        });
+      },
     },
   };
 </script>

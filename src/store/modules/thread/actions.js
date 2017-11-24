@@ -12,9 +12,11 @@ export default {
   createThread(context, data) {
     context.commit('creatingThread');
     // Simulate/Fake server request-response delay
-    setTimeout(() => {
-      context.commit('addThread', data);
-      context.commit('threadCreated');
-    }, 2000);
+    const ts = BaseService.base().threadService();
+    return ts.createThread(data.team, data.channel, data.subject, data.description)
+      .then((thread) => {
+        context.commit('addThread', thread);
+        context.commit('threadCreated');
+      });
   },
 };

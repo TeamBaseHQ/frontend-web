@@ -8,10 +8,10 @@ export default {
   threadsFetched(state) {
     state.loading = false;
   },
-  addThread(state, data) {
-    const newthreads = {...state.threads};
-    newthreads[data.slug] = data.thread;
-    state.threads = newthreads;
+  addThread(state, thread) {
+    const threads = state.threads;
+    threads.unshift(thread);
+    state.threads = threads;
   },
   creatingThread(state) {
     state.creatingThread = true;
