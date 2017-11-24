@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "base-javascript-sdk": "^0.1.4",
+    "base-javascript-sdk": "^0.1.6",
     "vee-validate": "^2.0.0-rc.23",
     "vue": "^2.4.4",
     "vue-router": "^2.3.1",
