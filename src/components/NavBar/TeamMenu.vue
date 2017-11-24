@@ -6,7 +6,6 @@
     bottom
     v-model="teamMenu"
     class="team-menu px-2"
-    v-if="!currentTeamIsLoading && currentTeam"
   >
     <div slot="activator" class="is-flex align-center justify-space-between">
       <v-avatar class="white" size="32px">
@@ -85,7 +84,6 @@
         if (this.teams.length) {
           return this.teams.filter(team => this.currentTeam.id !== team.id);
         }
-
         return [];
       },
     },

@@ -7,10 +7,10 @@
     id="navbar"
     class="navbar"
   >
-    <team-menu></team-menu>
+    <team-menu v-if="!currentTeamIsLoading && currentTeam"></team-menu>
     <v-spacer></v-spacer>
     <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-    <div class="navbar-items hidden-sm-and-down">
+    <div class="navbar-items hidden-sm-and-down" v-if="!currentTeamIsLoading && currentTeam">
       <v-btn flat small :to="{ name: 'app' }" exact>
         <v-icon class="hidden-lg-and-up">list</v-icon>
         <v-icon class="hidden-md-and-down" left>list</v-icon>
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex';
   import TeamMenu from './TeamMenu';
   import AccountMenu from './AccountMenu';
 
@@ -62,6 +63,12 @@
       return {
         accountMenu: false,
       };
+    },
+    computed: {
+      ...mapGetters({
+        currentTeam: 'currentTeam',
+        currentTeamIsLoading: 'currentTeamIsLoading',
+      }),
     },
     methods: {
       toggleSidebar() {

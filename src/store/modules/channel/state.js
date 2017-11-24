@@ -1,5 +1,5 @@
 export default {
-  channels: {},
+  channels: [],
   loading: false,
   creatingChannel: false,
 };

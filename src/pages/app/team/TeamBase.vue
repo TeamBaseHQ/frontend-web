@@ -34,7 +34,7 @@
       },
     },
     watch: {
-      $route() {
+      teamSlug() {
         this.fetchCurrentTeam(this.teamSlug);
       },
     },
