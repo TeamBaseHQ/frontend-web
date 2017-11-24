@@ -58,14 +58,18 @@
     },
     computed: {
       userInitial() {
-        return this.$currentUser.name.charAt(0);
+        if (this.$currentUser.name) {
+          return this.$currentUser.name.charAt(0);
+        }
+        return '';
       },
       profilePicture() {
-        if (this.$currentUser.picture && this.$currentUser.picture.thumb) {
-          return this.$currentUser.picture.thumb;
+        if (this.$currentUser &&
+          this.$currentUser.getPicture() &&
+          this.$currentUser.getPicture().getUrl('thumb')) {
+          return this.$currentUser.getPicture().getUrl('thumb');
         }
-
-        return false;
+        return '';
       },
       darkMode: {
         get() {
