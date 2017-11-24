@@ -1,7 +1,7 @@
 <template>
   <div id="team-base" class="team-base full-height">
-    <SideBar></SideBar>
-    <NavBar></NavBar>
+    <SideBar v-if="currentTeam"></SideBar>
+    <NavBar v-if="currentTeam"></NavBar>
     <main class="team-base-inner full-height">
       <router-view></router-view>
     </main>
@@ -27,7 +27,7 @@
         allTeams: 'allTeams',
         teamsAreLoading: 'teamsAreLoading',
         addingTeam: 'addingTeam',
-        team: 'currentTeam',
+        currentTeam: 'currentTeam',
       }),
       teamSlug() {
         return this.$route.params.teamSlug;
