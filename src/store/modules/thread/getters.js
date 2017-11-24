@@ -5,7 +5,7 @@ export default {
   threadsAreLoading(state) {
     return state.loading;
   },
-  addingThread(state) {
+  creatingThread(state) {
     return state.creatingThread;
   },
 };

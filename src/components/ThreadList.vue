@@ -79,7 +79,7 @@
       ...mapGetters({
         currentTeam: 'currentTeam',
         threads: 'allThreads',
-        addingThread: 'addingThread',
+        addingThread: 'creatingThread',
       }),
       channelSlug() {
         return this.$route.params.channelSlug;

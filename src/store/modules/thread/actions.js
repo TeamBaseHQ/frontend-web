@@ -17,6 +17,7 @@ export default {
       .then((thread) => {
         context.commit('addThread', thread);
         context.commit('threadCreated');
+        return thread;
       });
   },
 };

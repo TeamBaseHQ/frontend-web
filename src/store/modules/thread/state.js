@@ -1,5 +1,5 @@
 export default {
   threads: [],
   loading: false,
-  creatingThreads: false,
+  creatingThread: false,
 };
