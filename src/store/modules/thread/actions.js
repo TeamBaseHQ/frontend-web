@@ -1,13 +1,13 @@
-import threads from '@/services/thread';
+import BaseService from '../../../services/BaseService';
 
 export default {
-  fetchThreads(context, channel) {
+  fetchThreads(context, data) {
     context.commit('fetchingThreads');
-    // Simulate/Fake server request-response delay
-    setTimeout(() => {
-      context.commit('populateThreads', threads[channel]);
+
+    BaseService.base().threadService().getAllThreads(data.team, data.channel).then((threads) => {
+      context.commit('populateThreads', threads.getData());
       context.commit('threadsFetched');
-    }, 2000);
+    });
   },
   createThread(context, data) {
     context.commit('creatingThread');

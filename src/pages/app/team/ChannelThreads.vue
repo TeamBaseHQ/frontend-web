@@ -13,22 +13,27 @@
   >
     <v-toolbar flat class="transparent">
       <v-list class="pa-0">
-        <v-list-tile avatar>
+        <v-list-tile>
           <v-list-tile-content>
             <v-list-tile-title class="opacity-7">{{currentChannel.getName()}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-toolbar>
+    <v-divider></v-divider>
+
+    <thread-list v-if="currentChannel"></thread-list>
 
   </v-navigation-drawer>
 
 </template>
 
 <script>
-  import {mapGetters, mapActions} from 'vuex';
+  import {mapGetters} from 'vuex';
+  import ThreadList from '../../../components/ThreadList';
 
   export default {
+    components: {ThreadList},
     name: 'channel-threads',
     created() {
       //
@@ -59,10 +64,7 @@
       },
     },
     methods: {
-      ...mapActions([
-        'fetchThreads',
-        'createThread',
-      ]),
+      //
     },
   };
 </script>
