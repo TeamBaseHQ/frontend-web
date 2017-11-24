@@ -10,7 +10,9 @@
         </v-btn>
       </v-list-tile-action>
     </v-subheader>
-    <v-list-tile @click="" v-for="channel in channels" :key="channel.getSlug()">
+    <v-list-tile :to="{name:'channel-threads', params: { channelSlug: channel.getSlug() }}"
+                 v-for="channel in channels"
+                 :key="channel.getSlug()">
       <v-list-tile-action>
         <v-icon :style="getStyle(channel)">stop</v-icon>
       </v-list-tile-action>

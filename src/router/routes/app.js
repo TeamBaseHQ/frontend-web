@@ -2,6 +2,8 @@ import AppBase from '../../pages/app/AppBase';
 import AppMain from '../../pages/app/AppMain';
 import TeamBase from '../../pages/app/team/TeamBase';
 import TeamMain from '../../pages/app/team/TeamMain';
+import TeamChannel from '../../pages/app/team/TeamChannel';
+import ChannelThreads from '../../pages/app/team/ChannelThreads';
 import accountSettingsRoutes from './account-settings';
 
 export default [
@@ -25,6 +27,17 @@ export default [
             path: '/',
             name: 'team-dashboard',
             component: TeamMain,
+          },
+          {
+            path: ':channelSlug',
+            component: TeamChannel,
+            children: [
+              {
+                path: '/',
+                name: 'channel-threads',
+                component: ChannelThreads,
+              },
+            ],
           },
         ],
       },
