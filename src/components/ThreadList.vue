@@ -6,7 +6,8 @@
       </v-list-tile-content>
       <v-list-tile-action>
         <v-btn icon dark small @click="formVisible = !formVisible">
-          <v-icon>add</v-icon>
+          <v-icon v-show="formVisible">close</v-icon>
+          <v-icon v-show="!formVisible">add</v-icon>
         </v-btn>
       </v-list-tile-action>
     </v-subheader>
