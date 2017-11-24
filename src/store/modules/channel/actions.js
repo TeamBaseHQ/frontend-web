@@ -1,13 +1,13 @@
-import channels from '@/services/channel';
+import BaseService from '../../../services/BaseService';
 
 export default {
-  fetchChannels(context) {
+  fetchChannels(context, teamSlug) {
     context.commit('fetchingChannels');
-    // Simulate/Fake server request-response delay
-    setTimeout(() => {
-      context.commit('populateChannels', channels.all());
+
+    BaseService.base().channelService().getAllChannels(teamSlug).then((channels) => {
       context.commit('channelsFetched');
-    }, 2000);
+      context.commit('populateChannels', channels.getData());
+    });
   },
   createChannel(context, data) {
     context.commit('creatingChannel');
