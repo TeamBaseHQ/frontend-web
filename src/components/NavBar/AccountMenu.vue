@@ -8,15 +8,13 @@
     v-model="accountMenu"
     class="account-menu px-3"
   >
-    <v-avatar class="white" slot="activator" size="32px">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" :alt="$currentUser.name">
+    <v-avatar class="grey" slot="activator" size="32px">
+      <span v-if="!profilePicture">{{userInitial}}</span>
+      <img :src="profilePicture" :alt="$currentUser.name" v-if="profilePicture">
     </v-avatar>
     <v-card>
       <v-list>
         <v-list-tile avatar @click="">
-          <v-list-tile-avatar>
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" :alt="$currentUser.name">
-          </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{$currentUser.name}}</v-list-tile-title>
             <v-list-tile-sub-title>Active</v-list-tile-sub-title>
@@ -59,6 +57,16 @@
       };
     },
     computed: {
+      userInitial() {
+        return this.$currentUser.name.charAt(0);
+      },
+      profilePicture() {
+        if (this.$currentUser.picture && this.$currentUser.picture.thumb) {
+          return this.$currentUser.picture.thumb;
+        }
+
+        return false;
+      },
       darkMode: {
         get() {
           return this.$store.getters.isDarkMode;
