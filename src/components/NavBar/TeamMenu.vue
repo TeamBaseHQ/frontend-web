@@ -6,12 +6,13 @@
     bottom
     v-model="teamMenu"
     class="team-menu px-2"
+    v-if="!currentTeamIsLoading && currentTeam"
   >
     <div slot="activator" class="is-flex align-center justify-space-between">
       <v-avatar class="white" size="32px">
-        <img src="https://logo.clearbit.com/amazon.com?s=128"/>
+        <img :src="loadMedia(currentTeam.getPicture(), 'thumb')"/>
       </v-avatar>
-      <span>Amazon</span>
+      <span>{{currentTeam.getName()}}</span>
       <v-icon>arrow_drop_down</v-icon>
     </div>
     <v-card>
@@ -45,9 +46,9 @@
             </v-btn>
           </v-list-tile-action>
         </v-subheader>
-        <v-list-tile avatar @click="goToTeam(team.getSlug())" v-for="team in teams" :key="team.name">
+        <v-list-tile avatar @click="goToTeam(team.getSlug())" v-for="team in remainingTeams" :key="team.getName()">
           <v-list-tile-avatar>
-            <img src="http://placehold.it/40x40"/>
+            <img :src="loadMedia(team.getPicture(), 'thumb')" :alt="team.getName()"/>
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{team.getName()}}</v-list-tile-title>
@@ -77,7 +78,16 @@
         teamsAreLoading: 'teamsAreLoading',
         teams: 'allTeams',
         addingTeam: 'addingTeam',
+        currentTeam: 'currentTeam',
+        currentTeamIsLoading: 'currentTeamIsLoading',
       }),
+      remainingTeams() {
+        if (this.teams.length) {
+          return this.teams.filter(team => this.currentTeam.id !== team.id);
+        }
+
+        return [];
+      },
     },
     methods: {
       ...mapActions([

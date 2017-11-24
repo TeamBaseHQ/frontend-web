@@ -33,6 +33,11 @@
         return this.$route.params.teamSlug;
       },
     },
+    watch: {
+      $route() {
+        this.fetchCurrentTeam(this.teamSlug);
+      },
+    },
     methods: {
       ...mapActions([
         'fetchCurrentTeam',

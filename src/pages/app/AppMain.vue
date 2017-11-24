@@ -23,7 +23,7 @@
           <v-layout row wrap v-if="teams.length" class="is-flex align-center justify-center">
             <v-flex lg3 md4 sm12 xs12 v-for="team in teams" :key="team.slug">
               <v-card class="text-xs-center">
-                <v-card-media :src="loadPicture(team)" height="100px"></v-card-media>
+                <v-card-media :src="loadMedia(team.getPicture(), 'original')" height="100px"></v-card-media>
                 <v-card-title primary-title>
                   <div class="full-width">
                     <div class="headline">{{team.getName()}}</div>
@@ -60,7 +60,6 @@
 <script>
   import {mapGetters} from 'vuex';
   import AccountMenu from '../../components/NavBar/AccountMenu';
-  import Utils from '../../lib/Utils';
 
   export default {
     name: 'app-main',
@@ -75,10 +74,7 @@
       }),
     },
     methods: {
-      loadPicture(team) {
-        const pic = team.getPicture();
-        return Utils.loadMedia(pic, 'original');
-      },
+      //
     },
   };
 </script>
